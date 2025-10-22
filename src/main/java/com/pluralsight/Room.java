@@ -6,7 +6,7 @@ public class Room {
     private int numberOfBeds;
     private double price;
     private boolean occupied;
-    private boolean isDirty;
+    private boolean dirty;
 
     static Scanner myScanner = new Scanner(System.in);
 
@@ -14,7 +14,10 @@ public class Room {
         this.numberOfBeds = numberOfBeds;
         this.price = price;
         this.occupied = isOccupied;
-        this.isDirty = isDirty;
+        this.dirty = isDirty;
+    }
+
+    public Room() {
     }
 
     public int getNumberOfBeds() {
@@ -27,31 +30,33 @@ public class Room {
         return this.occupied;
     }
     public boolean isDirty () {
-        return this.isDirty;
+        return this.dirty;
     }
+
     public boolean isAvailable () {
-        if (!isDirty && !occupied) {
-
-        }; //if room is not dirty and not occupied return true -otherwise return false
-        return false;
+        if (!this.dirty && !this.occupied) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    @Override
-    public String toString() {
-        return "Room{" +
-                "numberOfBeds=" + numberOfBeds +
-                ", price=" + price +
-                ", isOccupied=" + occupied +
-                ", isDirty=" + isDirty +
-                '}';
-    }
-
+//    @Override
+//    public String toString() {
+//        return "Room{" +
+//                "numberOfBeds=" + numberOfBeds +
+//                ", price=" + price +
+//                ", isOccupied=" + occupied +
+//                ", isDirty=" + dirty +
+//                '}';
+//    }
 
     public boolean checkIn() {
         // If the room is already occupied
         if (this.isAvailable()) {
             this.occupied = true;
-            this.isDirty = true;
+            this.dirty = true;
             return true;
         } else {
             return false;
@@ -60,7 +65,7 @@ public class Room {
 
     public boolean checkOut() {
         if (this.occupied) {
-            this.isDirty = true;
+            this.dirty = true;
             this.occupied = false;
             return true;
         } else {
@@ -69,27 +74,13 @@ public class Room {
     }
 
     public boolean cleanRoom() {
-        if (this.isDirty) {
-            this.isDirty = false;
+        if (this.dirty) {
+            this.dirty = false;
             return true;
         }
         else {
             return false;
         }
     }
-//    public void checkIn() {
-//        System.out.println("Will you be checking in?  Enter Yes or No.");
-//        String userInput = myScanner.nextLine().trim();
-//
-//        if (userInput.equalsIgnoreCase("yes")) {
-//            if (isAvailable()) {
-//                occupied = true;
-//                isDirty = true;
-//                System.out.println("You have been checked in.");
-//            }else {
-//                System.out.println("This room is not available.");
-//            }
-//        }
-//    }
 
 }

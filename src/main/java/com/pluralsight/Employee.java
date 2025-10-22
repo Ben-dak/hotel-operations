@@ -12,19 +12,19 @@ public class Employee {
 
     public boolean punchIn() {
         if(this.atWork) {
-            System.out.println("alreay ay work, cant punch in.");
+            System.out.println("already at work, cant punch in.");
             return false;
 
         }
         else {
-            System.out.println("punching in a: " + LocalTime.now());
+            System.out.println("Punching in at: " + LocalTime.now());
             this.atWork = true;
             return true;
         }
     }
     public boolean punchOut() {
         if (!this.atWork) {
-            System.out.println("Ain't at work, can't punch out.");
+            System.out.println("Not at work, can't punch out.");
             return false;
         }
         else {
