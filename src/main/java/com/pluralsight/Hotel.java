@@ -35,8 +35,8 @@ public class Hotel {
         return bookedBasicRooms;
     }
 
-    public boolean bookRoom(int numberOfRooms, boolean isSuite) {
-        if ()
-    }
+//    public boolean bookRoom(int numberOfRooms, boolean isSuite) {
+//        if ()
+//    }
 
 }

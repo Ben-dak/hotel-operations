@@ -21,36 +21,26 @@ public class Room {
     }
 
     public int getNumberOfBeds() {
-        return this.numberOfBeds;
+        return numberOfBeds;
     }
     public double getPrice () {
-        return this.price;
+        return price;
     }
     public boolean getOccupied () {
-        return this.occupied;
+        return occupied;
     }
     public boolean isDirty () {
-        return this.dirty;
+        return dirty;
     }
 
     public boolean isAvailable () {
-        if (!this.dirty && !this.occupied) {
+        if (!dirty && !occupied) {
             return true;
         }
         else {
             return false;
         }
     }
-
-//    @Override
-//    public String toString() {
-//        return "Room{" +
-//                "numberOfBeds=" + numberOfBeds +
-//                ", price=" + price +
-//                ", isOccupied=" + occupied +
-//                ", isDirty=" + dirty +
-//                '}';
-//    }
 
     public boolean checkIn() {
         // If the room is already occupied
