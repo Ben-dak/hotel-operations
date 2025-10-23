@@ -7,7 +7,7 @@ public class Employee {
     private String name;
     private String department;
     private double payRate;
-    private int hoursWorked;
+    private double hoursWorked;
     private boolean atWork;
 
     public Employee(int employeeId, String name, String department, double payRate, int hoursWorked, boolean atWork) {
@@ -17,6 +17,9 @@ public class Employee {
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
         this.atWork = atWork;
+    }
+
+    public Employee() {
     }
 
     // getters and setters
@@ -52,11 +55,11 @@ public class Employee {
         this.payRate = payRate;
     }
 
-    public int getHoursWorked() {
+    public double getHoursWorked() {
         return hoursWorked;
     }
 
-    public void setHoursWorked(int hoursWorked) {
+    public void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 

@@ -16,7 +16,7 @@ class RoomTest {
         // Act - use what I declared and get the result (can rename actual)
         boolean actual = room1.checkIn();
 
-        // Assert
+        // Assert - verify results
         boolean expected = true;
         assertTrue(actual);
         assertTrue(room1.dirty);
@@ -40,7 +40,7 @@ class RoomTest {
     }
 
     @Test
-    void cleanRoom() {
+    void testCleanRoom() {
         // Arrange - needs to be dirty
         Room room3 = new Room();
         room3.dirty = true; // to show it needs cleaning
@@ -49,6 +49,6 @@ class RoomTest {
         // Assert - clean succeed/true
         assertTrue(actual);
         // to show that the room is not dirty now
-        assertFalse(!room3.dirty);
+        assertFalse(room3.dirty);
     }
 }
