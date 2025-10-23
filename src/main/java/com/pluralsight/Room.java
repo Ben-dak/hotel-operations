@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Room {
     private int numberOfBeds;
     private double price;
-    private boolean occupied;
-    private boolean dirty;
+    boolean occupied;
+    boolean dirty;
 
     static Scanner myScanner = new Scanner(System.in);
 
@@ -48,15 +48,20 @@ public class Room {
             this.occupied = true;
             this.dirty = true;
             return true;
-        } else {
+        } else { //otherwise
             return false;
         }
     }
 
     public boolean checkOut() {
+        // If the room is currently occupied
         if (this.occupied) {
+            // mark the room as dirty because someone just left
             this.dirty = true;
+            // mark the room as no longer occupied
             this.occupied = false;
+
+            // return true to indicate checkout was successful
             return true;
         } else {
             return false;
@@ -72,5 +77,4 @@ public class Room {
             return false;
         }
     }
-
 }
