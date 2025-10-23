@@ -14,12 +14,19 @@ class EmployeeTest {
 
         // ARRANGE
         Employee ee1 = new Employee(); // Creates a new Employee object
-        ee1.setHoursWorked(32.20); // This value will be used by the method under test
+
+        ee1.setHoursWorked(32.20); // stores the number 32.30 in the object’s field hoursWorked
+        //After this line executes, ee1 now holds that data - which can be used getRegularHours()
+
         // ACT
-        // Calls getRegularHours() to see how many hours the method reports as regular hours
+        // The line below calls getRegularHours() method on the Employee object named ee1
+        // then stores whatever value that method returns (see below comment) into a variable named actual
+        // (getRegularHours returns hoursWorked if this.hoursWorked <= 40)
         double actual = ee1.getRegularHours();
-        // Assert
-        // Since the employee worked less than 40 hours it returns 32.20
+        // Since the employee worked less than or qual to 40 hours getRegularHours returns 32.20
+
+        // ASSERT
+        // This means I expect the method getRegularHours() to return 32.20 due to my logic above.
         double expected = 32.20;
         // Compare the expected value to the actual result
         assertEquals(expected, actual);
